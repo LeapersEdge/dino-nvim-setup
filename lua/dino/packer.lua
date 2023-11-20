@@ -31,8 +31,8 @@ return require('packer').startup(function(use)
 	  branch = 'v3.x',
 	  requires = {
 		  --- Uncomment these if you want to manage LSP servers from neovim
-		  -- {'williamboman/mason.nvim'},
-		  -- {'williamboman/mason-lspconfig.nvim'},
+		  {'williamboman/mason.nvim'},
+		  {'williamboman/mason-lspconfig.nvim'},
 
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
@@ -42,9 +42,13 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+  use('mfussenegger/nvim-dap')
+  use { "rcarriga/nvim-dap-ui", 
+    requires = {"mfussenegger/nvim-dap"},
   }
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup({
+        direction = "float",
+    })
+  end}
 end)
