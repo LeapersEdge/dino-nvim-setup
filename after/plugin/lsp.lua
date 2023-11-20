@@ -1,5 +1,9 @@
 local lsp_zero = require('lsp-zero')
 
+lsp_zero.omnifunc.setup({
+  tabcomplete = true,
+})
+
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
