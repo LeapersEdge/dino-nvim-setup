@@ -42,13 +42,10 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
-  use('mfussenegger/nvim-dap')
-  use { "rcarriga/nvim-dap-ui", 
-    requires = {"mfussenegger/nvim-dap"},
-  }
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup({
         direction = "float",
     })
   end}
+  use('nvim-tree/nvim-web-devicons')
 end)
