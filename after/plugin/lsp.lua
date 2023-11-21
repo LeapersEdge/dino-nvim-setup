@@ -17,3 +17,5 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
   },
 })
+
+vim.keymap.set('n', '<leader>o', '[[:ClangdSwitchSourceHeader<CR>]]', { noremap = true, silent = true })
