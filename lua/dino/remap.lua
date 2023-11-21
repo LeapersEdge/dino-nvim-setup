@@ -28,3 +28,10 @@ vim.api.nvim_set_keymap('i', '[', '[]<Left>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '\"', '\"\"<Left>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '\'', '\'\'<Left>', { noremap = true, silent = true })
 
+function BuildProject()
+  local build_dir = vim.fn.getcwd() .. "/build"
+  local build_command = "cmake --build " .. build_dir
+
+  vim.fn.jobstart(build_command)
+end
+vim.keymap.set('n', '<leader>cmb', BuildProject, { noremap = true, silent = true })
