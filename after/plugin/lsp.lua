@@ -1,7 +1,7 @@
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.omnifunc.setup({
-  tabcomplete = true,
+  -- tabcomplete = true,
 })
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -12,7 +12,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'clangd', 'cmake', 'lua_ls'},
+  ensure_installed = {'clangd', 'cmake', 'lua_ls'};
   handlers = {
     lsp_zero.default_setup,
   },

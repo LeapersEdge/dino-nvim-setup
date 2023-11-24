@@ -109,6 +109,22 @@ _G.packer_plugins = {
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    config = { "\27LJ\2\ng\0\0\5\0\a\0\f6\0\0\0009\0\1\0009\0\2\0'\2\3\0006\3\0\0009\3\1\0039\3\4\3B\3\1\2'\4\5\0&\3\4\3'\4\6\0D\0\4\0\tfile\6/\vgetcwd\25Path to executable: \ninput\afn\bvimš\2\1\0\4\0\v\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\5\0004\1\3\0005\2\a\0003\3\b\0=\3\t\0024\3\0\0=\3\n\2>\2\1\1=\1\6\0K\0\1\0\targs\fprogram\0\1\0\6\ttype\tlldb\bcwd\23${workspaceFolder}\tname\vLaunch\frequest\vlaunch\16stopOnEntry\1\18runInTerminal\1\bcpp\19configurations\1\0\3\fcommand\16lldb-vscode\ttype\15executable\tname\tlldb\tlldb\radapters\bdap\frequire\0" },
+    loaded = true,
+    path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -123,12 +139,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
-  },
-  onedarkpro = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/dino/.local/share/nvim/site/pack/packer/start/onedarkpro",
-    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -165,18 +175,23 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/dino/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\ng\0\0\5\0\a\0\f6\0\0\0009\0\1\0009\0\2\0'\2\3\0006\3\0\0009\3\1\0039\3\4\3B\3\1\2'\4\5\0&\3\4\3'\4\6\0D\0\4\0\tfile\6/\vgetcwd\25Path to executable: \ninput\afn\bvimš\2\1\0\4\0\v\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\5\0004\1\3\0005\2\a\0003\3\b\0=\3\t\0024\3\0\0=\3\n\2>\2\1\1=\1\6\0K\0\1\0\targs\fprogram\0\1\0\6\ttype\tlldb\bcwd\23${workspaceFolder}\tname\vLaunch\frequest\vlaunch\16stopOnEntry\1\18runInTerminal\1\bcpp\19configurations\1\0\3\fcommand\16lldb-vscode\ttype\15executable\tname\tlldb\tlldb\radapters\bdap\frequire\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\14direction\nfloat\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: onedarkpro
-time([[Config for onedarkpro]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0", "config", "onedarkpro")
-time([[Config for onedarkpro]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

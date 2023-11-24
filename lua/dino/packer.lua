@@ -13,14 +13,15 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use ({
-	'olimorris/onedarkpro.nvim',
-	as = 'onedarkpro',
-	config = function()
-		vim.cmd("colorscheme onedark")
-	end
-  })
-
+--  use ({
+--	'olimorris/onedarkpro.nvim',
+--	as = 'onedarkpro',
+--	config = function()
+--		vim.cmd("colorscheme onedark")
+--	end
+--  })
+--  use { "ellisonleao/gruvbox.nvim" }
+  use 'Mofiqul/vscode.nvim'
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
@@ -48,4 +49,31 @@ return require('packer').startup(function(use)
     })
   end}
   use('nvim-tree/nvim-web-devicons')
+  use {
+    'mfussenegger/nvim-dap',
+    config = function()
+        require('dap').adapters.lldb = {
+            type = 'executable',
+            command = 'lldb-vscode',
+            name = 'lldb'
+        }
+        require('dap').configurations.cpp = {
+            {
+                name = "Launch",
+                type = "lldb",
+                request = "launch",
+                program = function()
+                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                end,
+                args = {},
+                cwd = '${workspaceFolder}',
+                stopOnEntry = false,
+                runInTerminal = false,
+            }
+        }
+    end
+  }
+
+  use('theHamsta/nvim-dap-virtual-text')
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 end)
