@@ -12,7 +12,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'clangd', 'cmake', 'lua_ls'};
+  ensure_installed = {'clangd', 'cmake', 'lua_ls', 'rust_analyzer'};
   handlers = {
     lsp_zero.default_setup,
   },
