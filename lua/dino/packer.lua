@@ -76,4 +76,12 @@ return require('packer').startup(function(use)
 
   use('theHamsta/nvim-dap-virtual-text')
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+  -- nvim v0.7.2
+  use({
+      "kdheepak/lazygit.nvim",
+      -- optional for floating window border decoration
+      requires = {
+          "nvim-lua/plenary.nvim",
+      },
+  })
 end)
