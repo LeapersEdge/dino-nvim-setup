@@ -1,2 +1,3 @@
-sudo pacman -S ttf-jetbrains-mono-nerd \n
+sudo pacman -S ttf-jetbrains-mono-nerd
+
 yay -S nvim-packer-git
