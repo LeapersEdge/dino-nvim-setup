@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/dino/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/home/dino/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/home/dino/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/home/dino/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/dino/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
+local package_path_str = "/home/dino/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?.lua;/home/dino/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?/init.lua;/home/dino/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?.lua;/home/dino/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/dino/.cache/nvim/packer_hererocks/2.1.1753364724/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -115,7 +115,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    config = { "\27LJ\2\ng\0\0\5\0\a\0\f6\0\0\0009\0\1\0009\0\2\0'\2\3\0006\3\0\0009\3\1\0039\3\4\3B\3\1\2'\4\5\0&\3\4\3'\4\6\0D\0\4\0\tfile\6/\vgetcwd\25Path to executable: \ninput\afn\bvim©\2\1\0\4\0\v\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\5\0004\1\3\0005\2\a\0003\3\b\0=\3\t\0024\3\0\0=\3\n\2>\2\1\1=\1\6\0K\0\1\0\targs\fprogram\0\1\0\b\fprogram\0\tname\vLaunch\targs\0\16stopOnEntry\1\bcwd\23${workspaceFolder}\18runInTerminal\1\ttype\tlldb\frequest\vlaunch\bcpp\19configurations\1\0\3\ttype\15executable\tname\tlldb\fcommand\16lldb-vscode\tlldb\radapters\bdap\frequire\0" },
+    config = { "\27LJ\2\ng\0\0\5\0\a\0\f6\0\0\0009\0\1\0009\0\2\0'\2\3\0006\3\0\0009\3\1\0039\3\4\3B\3\1\2'\4\5\0&\3\4\3'\4\6\0D\0\4\0\tfile\6/\vgetcwd\25Path to executable: \ninput\afn\bvim¦\2\1\0\4\0\v\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\5\0004\1\3\0005\2\a\0003\3\b\0=\3\t\0024\3\0\0=\3\n\2>\2\1\1=\1\6\0K\0\1\0\targs\fprogram\0\1\0\b\frequest\vlaunch\targs\0\ttype\tlldb\tname\vLaunch\bcwd\23${workspaceFolder}\fprogram\0\16stopOnEntry\1\18runInTerminal\1\bcpp\19configurations\1\0\3\fcommand\rlldb-dap\ttype\15executable\tname\tlldb\tlldb\radapters\bdap\frequire\0" },
     loaded = true,
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
@@ -145,6 +145,11 @@ _G.packer_plugins = {
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -169,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dino/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
+  },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/home/dino/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -199,14 +209,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-try_loadstring("\27LJ\2\ng\0\0\5\0\a\0\f6\0\0\0009\0\1\0009\0\2\0'\2\3\0006\3\0\0009\3\1\0039\3\4\3B\3\1\2'\4\5\0&\3\4\3'\4\6\0D\0\4\0\tfile\6/\vgetcwd\25Path to executable: \ninput\afn\bvim©\2\1\0\4\0\v\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\5\0004\1\3\0005\2\a\0003\3\b\0=\3\t\0024\3\0\0=\3\n\2>\2\1\1=\1\6\0K\0\1\0\targs\fprogram\0\1\0\b\fprogram\0\tname\vLaunch\targs\0\16stopOnEntry\1\bcwd\23${workspaceFolder}\18runInTerminal\1\ttype\tlldb\frequest\vlaunch\bcpp\19configurations\1\0\3\ttype\15executable\tname\tlldb\fcommand\16lldb-vscode\tlldb\radapters\bdap\frequire\0", "config", "nvim-dap")
-time([[Config for nvim-dap]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\14direction\nfloat\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\ng\0\0\5\0\a\0\f6\0\0\0009\0\1\0009\0\2\0'\2\3\0006\3\0\0009\3\1\0039\3\4\3B\3\1\2'\4\5\0&\3\4\3'\4\6\0D\0\4\0\tfile\6/\vgetcwd\25Path to executable: \ninput\afn\bvim¦\2\1\0\4\0\v\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\1\4\0=\1\3\0006\0\0\0'\2\1\0B\0\2\0029\0\5\0004\1\3\0005\2\a\0003\3\b\0=\3\t\0024\3\0\0=\3\n\2>\2\1\1=\1\6\0K\0\1\0\targs\fprogram\0\1\0\b\frequest\vlaunch\targs\0\ttype\tlldb\tname\vLaunch\bcwd\23${workspaceFolder}\fprogram\0\16stopOnEntry\1\18runInTerminal\1\bcpp\19configurations\1\0\3\fcommand\rlldb-dap\ttype\15executable\tname\tlldb\tlldb\radapters\bdap\frequire\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

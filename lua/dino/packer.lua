@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 --  use { "ellisonleao/gruvbox.nvim" }
   use 'Mofiqul/vscode.nvim'
   use('nvim-treesitter/playground')
-  use{'nvim-treesitter/nvim-treesitter', tag = 'v0.9.2', run = ':TSUpdate'}
+  use{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
     config = function()
         require('dap').adapters.lldb = {
             type = 'executable',
-            command = 'lldb-vscode',
+            command = 'lldb-dap',
             name = 'lldb'
         }
         require('dap').configurations.cpp = {
@@ -84,5 +84,7 @@ return require('packer').startup(function(use)
           "nvim-lua/plenary.nvim",
       },
   })
-  use 'andweeb/presence.nvim'
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 end)
+
+

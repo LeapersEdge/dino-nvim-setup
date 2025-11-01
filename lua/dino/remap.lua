@@ -28,10 +28,10 @@ vim.keymap.set('i', '[', '[]<Left>', { noremap = true, silent = true })
 vim.keymap.set('i', '{', '{}<Left>', { noremap = true, silent = true })
 
 function BuildProject()
-  local build_dir = vim.fn.getcwd() .. "/build"
-  local build_command = "cmake --build " .. build_dir
-
-  vim.fn.jobstart(build_command)
+    local cmd = [[
+        cd build && make -j 8 && ./build && cd ..
+    ]]
+    vim.cmd('! ' .. cmd)
 end
 vim.keymap.set('n', '<leader>cmb', BuildProject, { noremap = true, silent = true })
 
@@ -43,7 +43,7 @@ function createFile(extension)
 
     -- Append extension based on the input
     if extension == "cpp" then
-        inclfile = inclfile .. ".hpp"
+        inclfile = inclfile .. ".h"
         srcfile = srcfile .. ".cpp"
     elseif extension == "c" then
         inclfile = inclfile .. ".h"
@@ -65,4 +65,30 @@ function createFile(extension)
     -- Print a message indicating the created files
     print("Created files: " .. includeFilePath .. " and " .. srcFilePath)
 end
+
+-- Function to create a file in both include and src folders
+function createHeader()
+    local filename = vim.fn.input('Enter header file name: ')
+    local inclfile = filename
+
+    -- Append extension based on the input
+    inclfile = inclfile .. ".h"
+
+    -- Define the file paths
+    local includeFilePath = 'include/' .. inclfile
+
+    -- Create the files
+    local includeFile = io.open(includeFilePath, 'w')
+
+    -- Close the file handles
+    includeFile:close()
+
+    -- Print a message indicating the created files
+    print("Created file: " .. includeFilePath)
+end
+
 vim.api.nvim_set_keymap('n', '<leader>cfc', [[:lua createFile('cpp')<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cfp', [[:lua createFile('c')<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>cfh', [[:lua createHeader()<CR>]], { noremap = true, silent = true })
+
+vim.cmd("cabbrev W w")

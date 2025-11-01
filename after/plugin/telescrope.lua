@@ -22,7 +22,7 @@ local function load_telescope_ignore_patterns()
       return ignore_config.ignore_folders or {}
     end
   end
-  print(".telescope_ignore.lua is not pressent in dir where nvim was ran")
+  -- print(".telescope_ignore.lua is not pressent in dir where nvim was ran")
   return {}
 end
 
@@ -31,12 +31,14 @@ end
 
 require('telescope').setup {
   defaults = {
+    sorting_strategy = "descending",
     file_icons = true,
     file_ignore_patterns = load_telescope_ignore_patterns()
   },
 }
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>FF', builtin.find_files, {})
 vim.keymap.set('n', '<C-f>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fs', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") });	
