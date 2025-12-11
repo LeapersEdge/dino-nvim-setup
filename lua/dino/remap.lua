@@ -29,7 +29,7 @@ vim.keymap.set('i', '{', '{}<Left>', { noremap = true, silent = true })
 
 function BuildProject()
     local cmd = [[
-        cd build && make -j 8 && ./build && cd ..
+        cd build && make -j 6 && cd ..
     ]]
     vim.cmd('! ' .. cmd)
 end
